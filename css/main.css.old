@@ -1,0 +1,1232 @@
+/*! HTML5 Boilerplate v6.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/*Globals*/
+html{
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+div.container{
+    width: 100%;
+}
+.white-background{
+    background-image: url('../img/General/Fondos/5.png');
+}
+.green-background{
+    background-image: url('../img/General/Fondos/2.png');
+}
+.yellow-background{
+    background-image: url('../img/Ceremonia/Fondos_Bola/2.png');
+}
+.blue-background{
+    background-image: url('../img/Ceremonia/Fondos_Bola/3.png'); 
+}
+.green-background-info{
+    background-image: url('../img/Ceremonia/Fondos_Bola/4.png');
+}
+.no-underline{
+    text-decoration: none;
+}
+
+.yellow-text{
+    color: #ffaf0d;
+}
+.white-text{
+    color: white;
+}
+.green-text{
+    color: #008040;
+}
+
+@font-face {
+    font-family: footlongOffice;
+    src: url('../fonts/SubwayFootlongOffice.otf');
+}
+@font-face {
+    font-family: footlong;
+    src: url('../fonts/SubwayFootlong.otf');
+}
+@font-face {
+    font-family: sixInch;
+    src: url('../fonts/SubwaySix-Inch.otf');
+}
+@font-face {
+    font-family: sixInchOffice;
+    src: url('../fonts/SubwaySix-InchOffice.otf');
+}
+.footlong{
+    font-family: footlongOffice;
+}
+.sixInch{
+    font-family: sixInchOffice;
+}
+.no-display{
+    display: none;
+}
+/*Menu*/
+label .menu {
+    position: fixed;
+    right: -100px;
+    top: -100px;
+    z-index: 100;
+    width: 170px;
+    height: 170px;
+    border-radius: 50% 50% 50% 50%;
+    transition: .4s ease-in-out;
+    box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #FFF;
+    cursor: pointer;
+    background: #008041;
+}
+label .hamburger {
+    position: absolute;
+    top: 125px;
+    left: 30px;
+    width: 30px;
+    height: 4px;
+    background: #ffaf0d;
+    display: block;
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    transition: .5s ease-in-out;
+}
+label .hamburger:after, label .hamburger:before {
+    transition: .5s ease-in-out;
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #ffaf0d;
+}
+label .hamburger:before {
+    top: -10px;
+}
+label .hamburger:after {
+    bottom: -10px;
+}
+label input {
+    display: none;
+}
+label input:checked + .menu {
+    box-shadow: 0 0 0 100vw #008041, 0 0 0 100vh #008041;
+    border-radius: 0;
+    
+}
+label input:checked + .menu .hamburger {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+label input:checked + .menu .hamburger:after {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    bottom: 0;
+}
+label input:checked + .menu .hamburger:before {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    top: 0;
+}
+label input:checked + .menu + ul {
+    opacity: 1;
+}
+label ul {
+    z-index: 200;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: .1s .2s ease-in-out;
+
+    list-style: none;
+    padding: 0;
+    font-size: 1.3em;
+    text-align: center;
+}
+label ul a {
+    margin-bottom: 1em;
+    color: #ffaf0d;
+    display: block;
+    text-decoration: none;
+    font-family: footlongOffice;
+}
+label ul li img{
+    width: 50%;
+}
+label ul li img:nth-child(2){
+    float: right;
+}
+/*Home */
+div.home{
+    position: relative;
+}
+
+div.home > img{
+    width: 100%;
+}
+
+div.home div.logos{
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+
+div.home div.logos > img{
+    width: 37px;
+    display: block;
+    position: relative;
+    left: -50%;
+}
+
+/*Tourtament*/
+div.tourtament{
+    padding: 5px;
+}
+div.tourtament > img:nth-child(1){
+    width: 80px;
+}
+div.tourtament > img:nth-child(2){
+    width: 100%;
+}
+div.tourtament a{
+    font-size: .8rem;
+}
+div.tourtament p{
+    font-size: .5rem;
+    margin: 0;
+}
+.down-arrow{
+    width: 20px;
+}
+
+/*Calendar*/
+div.calendar{
+    padding: 5% 5px 5px 5px;
+}
+
+div.calendar > img:nth-child(1){
+    width: 120px;
+}
+div.games div.game{
+    width: 90%;
+    margin: 20px auto;
+}
+div.games div.game img{
+    width: 100%
+}
+div.games div.game p{
+    font-family: sixInchOffice;
+    text-align: center;
+    color: white;
+    margin: 0;
+    font-size: 1em;
+}
+div.final{
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 8%;
+}
+div.final img{
+    width: 100%;
+}
+/*Ceremony*/
+div.ceremony{
+    position: relative;
+}
+div.ceremony > img{
+    width: 100%;
+}
+div.three-winners{
+     width: 40%;
+     position: absolute;
+     top: 0;
+     margin-left: 5%;
+}
+div.three-winners h2{
+    font-size: .7rem;
+}
+div.three-winners h2:nth-child(2){
+    padding: 20% 0;
+    margin-bottom: 0;
+}
+div.three-winners img{
+    width: 40%;
+    display: block;
+}
+
+/*Menu*/
+div.menu{
+    position: relative;
+}
+div.menu > img{
+    width: 100%;
+}
+div.menu-content{
+    position: absolute;
+    width: 70%;
+    top: 0;
+    margin-left: 5%;
+}
+div.menu-content h2{
+    font-size: 1.4em;
+    margin-bottom: 4%;
+}
+div.menu-content a img {
+    width: 40%;
+}
+div.menu-content-logos{
+    margin-top: 5%;
+}
+div.menu-content-logos img{
+    width: 30%; 
+}
+div.menu-content-logos img:nth-child(2){
+    margin-left: 5%;
+}
+
+/*Form */
+div.form-header{
+    position: relative;
+}
+
+div.form-header > img{
+    width: 100%;
+}
+
+div.form-header div.logos{
+    
+	position: absolute;
+    top: 0;
+    left: 50%;
+	
+}
+
+div.form-header div.logos > img{
+   
+	width: 37px;
+    display: block;
+    position: relative;
+    left: -50%;
+}
+
+div.form-title{
+    width: 100%;
+    margin-top: 5%;
+}
+div.form-title img{
+    width: 60%;
+    margin-left: -2%
+}
+div.form-title p{
+    width: 90%;
+    margin: 0 auto;
+}
+div.form-title p:nth-child(2){
+    margin-top: 5%
+}
+div.form-group{
+    margin: 20px auto;
+    width: 90%;
+}
+div.form-group label{
+    color: #008041; 
+    padding: 5px;
+}
+div.form-group label, div.form-group input{
+    display: block;
+    font-family: sixInch;
+}
+div.form-group input, div.form-group select{
+    background-color: #d2d3d4;
+    border-radius: 7px;
+    border: none;
+    width: 100%;
+    height: 35px;
+    padding-left: 10px;
+    color: #707174;
+}
+div.form-group input:focus, div.form-group select:focus{
+    border-color: transparent;
+    outline: 0;
+}
+#Accept{
+    width: 20px;
+    height: 15px;
+}
+div.form-group #Accept + label, #Accept{
+    display: inline;
+}
+div.form-group select{
+    background: url('../img/Formulario/land-05.png') no-repeat right #d2d3d4;
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+}
+div.end-form div.submit-form{
+    margin-top: 2%;
+}
+div.end-form div.submit-form input{
+    background: #008040;
+    width: 90%;
+    height: 55px;
+    color: white;
+    font-family: footlong;
+    font-size: 30px;
+    border-radius: 10px;
+    display: block;
+    padding: 8px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+div.end-form div.submit-form p{
+    text-align: center;
+    margin-top: 5px;
+    font-size: 10px;
+}
+
+div.logo-coca{
+    margin: 0 auto;
+    width: 60%;
+}
+div.logo-coca img{
+    width: 100%;
+}
+p.cr{
+    color: #707174;
+    font-size: .5em;
+    text-align: center;
+    margin: 5px;
+}
+.was-validated .form-control:invalid {
+    border: 1.5px solid #dc3545;
+}
+/*Info*/
+
+div.info-header h1{
+    font-size: 1.5em;
+    margin: 0;
+    padding:5%;
+}
+
+div.info-content1, 
+div.info-content2,
+div.info-content3,
+div.info-content4{
+    position: relative;
+}
+div.info-content1 img:nth-child(1){
+    width: 20%;
+    margin-top: -10%;
+    position: absolute;
+    right: 30px;
+}
+div.info-content1 img:nth-child(2){
+    width: 50%;
+    margin-bottom: -5%;
+    position: relative;
+    z-index: 1;
+}
+div.info-content1 div.info-text,
+div.info-content3 div.info-text{
+    float: right;
+    width: 50%;
+    font-size: 11px;
+    padding: 5% 15% 0 0;
+}
+
+div.info-content2 img{
+    width: 50%;
+    margin-top: -5%;
+    margin-left: 50%;
+    margin-bottom: -5%;
+    position: relative;
+    z-index: 1;
+}
+div.info-content2 div.info-text,
+div.info-content4 div.info-text{
+    width: 50%;
+    padding: 1% 1% 2% 10%;
+    font-size: 11px;
+    position: absolute;
+    top: 0;
+}
+div.info-content3 > img{
+    width: 50%;
+    margin-top: -8%;
+    position: relative;
+    margin-bottom: -4%;
+    z-index: 1;
+}
+div.info-content3 div.logos{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 2%;
+}
+div.info-content4 > img{
+    width: 50%;
+    margin-top: -5%;
+    margin-left: 50%;
+    position: relative;
+    z-index: 1;
+}
+div.info-content4 div.info-text{
+    padding-top: 15%;
+}
+div.info-content4 div.info-text > a > img{
+    width: 100%;
+}
+div.info-content4 div.logos{
+    margin: -7% 0 10% 10%;
+}
+div.info-content4 div.logos img{
+    width: 25%;
+}
+
+/*Menu Detail*/
+div.menu-detail h2{
+    margin: 0;
+    padding: 5%;
+    font-size: 1.6em;
+}
+div.menu-detail > img{
+    position: absolute;
+    right: 0;
+    width: 15%;
+    margin-top: -10%;
+    margin-right: 15%;
+}
+div.menu-detail div.menu-list,
+div.end-menu-detail{
+    width: 90%;
+    margin: 0 auto;
+}
+div.menu-detail div.menu-item img{
+    width: 40%;
+    margin: 3%;
+    display: inline-block;
+}
+div.end-menu-detail{
+    font-size: .6em;
+}
+div.end-menu-detail img{
+    width: 25%;
+    float: right;
+    margin-top: -2%;
+}
+div.menu-item{
+    margin-top: 7%;
+}
+div.menu-item-text{
+    display: inline-block;
+}
+div.menu-item-text p{
+    margin: 0;
+    margin-left: 20px;
+}
+
+/*Confirmation Page*/
+div.confirmation{
+    position: relative;
+}
+div.confirmation-backgroung{
+    width: 100%
+}
+div.header-text{
+    text-align: center;
+    margin-top: 5%;
+    font-size: 1em;
+}
+div.header-text h1{
+    margin-bottom: 0;
+}
+div.header-text h2{
+    margin: 0;
+}
+div.header-text h3{
+    margin-top: 0;
+}
+div.confirmation-backgroung img{
+    width: 100%;
+}
+div.confirmation-content{
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+div.images-center {
+    width: 50%;
+    margin: 5% auto;
+}
+div.images-center > img,
+div.images-center a img{
+    width: 100%;
+    display: block;
+}
+div.confirmation-footer{
+    width: 100%;
+    margin-top: 15%;
+}
+div.confirmation-footer img{
+    width: 35%;
+}
+div.confirmation-footer img:nth-child(2){
+    float: right;
+}
+/*Terms and conditions*/
+div.terms h1{
+    margin: 0;
+    margin-left: 3%;
+    font-size: 1.3em;
+    padding: 20px;
+}
+div.terms div.terms-text {
+    width: 90%;
+    margin: 30px auto;
+}
+
+div.terms div.terms-text p{
+    font-family: sixinch;
+    font-size: 1em;
+    color: #707174;
+}
+/* Medias Querys */
+@media only screen and (min-width: 565px){
+
+    /*Home*/
+    div.home div.logos > img{
+        width: 65px;
+    }
+    /*Info*/
+    div.info-header h1,
+    div.terms h1 {
+        font-size: 2em;
+    }
+
+    div.info-content1 div.info-text,
+    div.info-content2 div.info-text,
+    div.info-content3 div.info-text,
+    div.info-content4 div.info-text{
+        font-size: 18px;
+    }
+}
+@media only screen and (min-width:600px){
+
+    /*Home*/
+    div.home div.logos > img{
+        width: 75px;
+    }
+
+    /*Tourtament*/
+    div.tourtament > img:nth-child(1){
+        width: 160px;
+    }
+    div.tourtament a{
+        font-size: 1.2rem;
+        margin-left: 10px;
+    }
+    div.tourtament p{
+        font-size: .8rem;
+        margin-left: 10px;
+    }
+    .down-arrow{
+        width: 40px;
+    }
+
+    /*Calendar*/
+    div.calendar > img:nth-child(1){
+        width: 200px;
+    }
+
+    /*Ceremony*/
+    div.three-winners h2{
+        font-size: 1.6rem;
+    }
+
+    /*Menu*/
+    div.menu-content h2{
+        font-size: 2.9em;
+    }
+    div.menu-detail > img{
+        width: 20%;
+        margin-top: -15%;
+        margin-right: 5%;
+    }
+
+    /*Form*/
+    div.form{
+        width: 70%;
+        margin: 0 auto;
+    }
+     
+    div.form-title p{
+        width: 62%;
+        margin: 0 auto;
+    }
+    div.form-header div.logos > img{
+        width: 75px;
+    }
+    div.end-form div.submit-form{
+        float: left;
+        width: 35%;
+        margin-left: 4%;
+    }
+    div.end-form div.logo-coca{
+        float: left;
+        width: 28%;
+        margin-left: 4%;
+    }
+   
+    /*Info*/
+    div.info-header h1,
+    div.terms h1 {
+        font-size: 3em;
+    }
+    div.info-content1 div.info-text,
+    div.info-content2 div.info-text,
+    div.info-content3 div.info-text,
+    div.info-content4 div.info-text{
+        font-size: 20px;
+    }
+
+    /*Menu Detail*/
+    div.menu-detail h2 {
+        font-size: 3.4em;
+    }
+    div.menu-detail div.menu-list {
+        width: 80%;
+    }
+    div.end-menu-detail {
+        font-size: 1em;
+    }
+
+    /*Confirmation Page*/
+    div.header-text{
+        font-size: 1.6em;
+    }
+    div.images-center {
+        width: 25%;
+    }
+}
+
+@media only screen and (min-width:768px){
+
+     /*Home*/
+     div.home div.logos > img{
+        width: 85px;
+    }
+
+    /*Menu*/
+    label ul{
+        font-size: 2.5em;
+    }
+
+    /*Calendar*/
+    div.calendar > img:nth-child(1){
+        width: 220px;
+    }
+    div.games div.game p {
+        font-size: 1.2em;
+    }
+    div.games div.game{
+        width: 49%;
+        display: inline-block;
+        margin: 0;
+        padding: 25px;
+    }
+    div.final{
+        width: 70%;
+        margin-left: 30px;
+    }
+    /*Ceremony*/
+    div.three-winners h2{
+        font-size: 1.6rem;
+    }
+
+    /*Menu*/
+    div.menu-content h2{
+        font-size: 3.2em;
+    }
+   
+    p.cr{
+        font-size: .8em;
+    }
+
+    /*Form*/
+    div.form-header div.logos > img{
+        width: 85px;
+    }
+    /*Info*/
+    div.info-header h1,
+    div.terms h1 {
+        font-size: 3.6em;
+    }
+    div.info-content1 div.info-text,
+    div.info-content2 div.info-text,
+    div.info-content3 div.info-text,
+    div.info-content4 div.info-text{
+        font-size: 26px;
+    }
+    div.info-content4 div.info-text{
+        font-size: 2em;
+    }
+
+    /*Menu Detail*/
+    div.menu-detail h2 {
+        font-size: 3.8em;
+    }
+    
+    div.end-menu-detail {
+        font-size: 1.2em;
+    }
+
+    div.menu-item-text p{
+       font-size: 2em;
+        margin-left: 30px;
+    }
+    
+    /*Confirmation Page*/
+    div.header-text{
+        font-size: 2em;
+    }
+    div.images-center {
+        width: 30%;
+    }
+
+    /*Terms*/
+    div.terms div.terms-text p{
+        font-size: 1.8em;
+    }
+}
+
+@media only screen and (min-width:992px){
+     /*Menu*/
+     label ul{
+        font-size: 2.8em;
+    }
+
+    /*Home*/
+    div.home div.logos > img{
+        width: 110px;
+    }
+
+    /*Tourtament*/
+    div.tourtament > img:nth-child(1){
+        width: 200px;
+    }
+    div.tourtament a{
+        font-size: 1.6rem;
+    }
+    div.tourtament p{
+        font-size: 1rem;
+    }
+
+    /*Calendar*/
+    div.calendar > img:nth-child(1){
+        width: 260px;
+    }
+    div.games div.game p {
+        font-size: 2em;
+    }
+
+    /*Ceremony*/
+    div.three-winners h2{
+        font-size: 2.1em;
+    }
+
+    /*Menu*/
+    div.menu-content h2{
+        font-size: 4.2em;
+    }
+
+    /*Form*/
+    div.form{
+        width: 60%;
+    }
+    div.form-title p{
+        width: 54%;
+    }
+    div.form-header div.logos > img{
+        width: 110px;
+    }
+    div.form-group label, 
+    div.form-group input, 
+    div.form-group select,
+    div.form-title p{
+        font-size: 1.4em;
+    }
+    div.form-group input, 
+    div.form-group select{
+        height: 2.2em;
+    }
+
+    /*Info*/
+    div.info-header h1,
+    div.terms h1 {
+        font-size: 4.6em;
+    }
+    div.info-content1 div.info-text,
+    div.info-content2 div.info-text,
+    div.info-content3 div.info-text,
+    div.info-content4 div.info-text{
+        font-size: 34px;
+    }
+     div.info-content4 div.info-text{
+        font-size: 2.7em;
+    }
+
+    /*Menu Detail*/
+    div.menu-detail h2 {
+        font-size: 5.8em;
+    }
+    div.menu-detail div.menu-list {
+        width: 70%;
+    }
+    div.end-menu-detail {
+        font-size: 1.6em;
+    }
+    div.header-text{
+        font-size: 3em;
+    }
+    div.menu-item-text p{
+        font-size: 2.2em;
+         margin-left: 40px;
+     }
+}
+
+@media only screen and (min-width:1200px){
+    /*Home*/
+    div.home div.logos > img{
+        width: 150px;
+    }
+
+    /*Ceremony*/
+    div.three-winners h2{
+        font-size: 3em;
+    }
+
+    /*Menu*/
+    div.menu-content h2{
+        font-size: 3.2em;
+    }
+
+    /*Menu*/
+    div.menu-content h2{
+        font-size: 6em;
+    }
+
+    /*Form*/
+    div.form-header div.logos > img{
+        width: 150px;
+    }
+    div.form{
+        width: 50%;
+    }
+    div.form-title p{
+        width: 45%;
+    }
+    /*Info*/
+    div.info-header h1 {
+        font-size: 7em;
+    }
+    div.info-content1 div.info-text,
+    div.info-content2 div.info-text,
+    div.info-content3 div.info-text,
+    div.info-content4 div.info-text{
+        font-size: 46px;
+    }
+     div.info-content4 div.info-text{
+        font-size: 3.6em;
+    }              
+    /*Menu Detail*/
+    div.menu-detail h2 {
+        font-size: 6.8em;
+    }
+    div.menu-detail div.menu-list {
+        width: 60%;
+    }
+    div.menu-item-text p{
+        font-size: 2.5em;
+         margin-left: 50px;
+     }
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* 1 */
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    -webkit-clip-path: none;
+    clip-path: none;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+    white-space: inherit;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
