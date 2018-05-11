@@ -268,9 +268,45 @@ div.logos-end-form img{
     display: inline-block;
     width: 40%;
 }
+
+/*Premio*/
+div.banderines{
+    width: 100%;
+    margin: 0 auto;
+}
+div.banderines img{
+    width: 100%;
+}
+div.premio > h2, 
+div.premio > p{
+    text-align: center;
+}
+div.premio > h2{
+    font-size: 1.5em;
+}
+div.premio > p{
+    font-size: 2em;
+}
+div.premio img#imgReglamento{
+    width: 100%;
+}
+div.premio img#imgVolver, 
+div.premio img#imgRaspa{
+    width: 50%;
+    margin-left: 25%;
+}
+div.premio div.logos{
+    width: 100%;
+    margin: 10% auto;
+}
+
+div.premio div.logos img{
+    width: 25%;
+}
+div.premio div.logos img:nth-child(2){
+    margin-left: 48%;
+}
 /* Medias Querys */
-
-
 @media only screen and (min-width:600px){
     div.container div.content {
         width: 70%;
@@ -282,6 +318,11 @@ div.logos-end-form img{
     div.form-group select {
         font-size: 1em;
     }
+
+    /*Premio*/
+    div.banderines{
+        width: 70%;
+    }
 }
 
 @media only screen and (min-width:800px){
@@ -291,6 +332,10 @@ div.logos-end-form img{
     }
     div.form-header{
         margin-left: 20%;
+    }
+    /*Premio*/
+    div.banderines{
+        width: 60%;
     }
     
 }
@@ -307,6 +352,27 @@ div.logos-end-form img{
     div.submit-form input {
         font-size: 2em;
     }
+
+    /*Premio*/
+    div.premio > h2{
+        font-size: 2em;
+    }
+    div.premio > p{
+        font-size: 2.5em;
+    }
+    div.premio div.logos{
+        width: 80%;
+    }
+    div.premio img#imgReglamento{
+        width: 80%;
+        margin-left: 10%;
+    }
+    div.premio img#imgVolver, 
+    div.premio img#imgRaspa{
+        width: 40%;
+        margin-left: 30%;
+    }
+
 }
 @media only screen and (min-width:1200px){
     div.container div.content,
@@ -316,6 +382,12 @@ div.logos-end-form img{
     div.form-header{
         margin-left: 25%;
     }
+
+    /*Premio*/
+    div.banderines{
+        width: 50%;
+    }
+    
 }
 
 /* ==========================================================================
