@@ -74,7 +74,7 @@
                 $titulo = "¡Participá de nuevo!";
                 break;
             default:
-                $titulo = "¡Itenta mas tarde!";
+                $titulo = "¡Intenta mas tarde!";
         }
         
     ?>
