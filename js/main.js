@@ -2,13 +2,14 @@ $(function(){
 
   $('#Accept').on('click', function(){
     $('.submit-form').toggle(500);
-  
   })
+  
 });
 
 (function() {
   "use strict";
   window.addEventListener("load", function() {
+
     var form = document.querySelector("#contact_form");
     form.addEventListener("submit", function(event) {
         if (form.checkValidity() == false) {

@@ -38,9 +38,10 @@
 
     <?php
 
-        $premio = "null";
+        $premio = "sub";
         $mensaje = "";
         $footer = "";
+        $visible = "hidden";
 
         if(isset($_GET['premio'])){
             $premio = $_GET['premio'];
@@ -48,33 +49,45 @@
 
         switch($premio){
             case "sub":
-                $mensaje = "Tomá captura de este código y presentalo en tu restaurante favorito antes del...";
-                $footer = "Te recomendamos conservar tu factura. Recordá canjear tu premio antes del periodo de vencimiento. Consultá condiciones completas de la promoción aquí";
+                $mensaje = "Tomá captura de este código y presentalo en tu restaurante favorito antes del 02/02/2018";
+                $footer = 'Te recomendamos conservar tu factura. Recordá canjear tu premio antes del periodo de vencimiento. Consultá condiciones completas de la promoción <a href="#" class="yellow-text no-underline">aquí.</a>';
                 break;
             case "sin premio":
+                $visible = "visible";
                 break;
             case "mochila":
+                $mensaje = "Tomá captura de este código y presentalo en Subway Yoses antes del 02/02/2018";
+                $footer = 'Te recomendamos conservar tu factura. Este premio solo puede ser canjeado en el restaurante indicado. Recordá canjear tu premio antes del periodo de vencimiento. Consultá condiciones completas de la promoción <a href="#" class="yellow-text no-underline">aquí.</a>';
                 break;
             case "coca":
+                $mensaje = "Ingresá este codigo en al aplicación Coca Cola For Me para agregar los Bubbles a tu cuenta.";
+                $footer = 'Consultá condiciones completas de la promoción <a href="#" class="yellow-text no-underline">aquí.</a>';
                 break;
             default:
+                $mensaje = "";
+                $footer = "";
         }
         
-        
-        
     ?>
+    
 
-
-    <!-- Content -->
-    <div class="container green-background-info">
+        
+    <!-- Content width="100" height="300"-->
+    <div class="container green-background-info" style="visibility:<?= $visible ?>" id="container">
         <?php if($premio == 'sub' || $premio == 'mochila' || $premio == 'coca' ) {?>
             <div class="premio-raspa">
                 <h1 class="yellow-text footlong">¡Felicidades!</h1>
                 <div class="img-premio-raspa">
-                    <img src="<?= 'img/' . $premio . '.png' ?>" alt="Premio">
+                    <canvas class="canvas" id="js-canvas" ></canvas>
+                    <img src="<?= 'img/premio.png' ?>" alt="Premio">
+                    <p class="white-text sixInch mensaje-raspa"><?= $mensaje?></p>
                 </div>
+                
+                <div class="qr-premio-raspa">
+                    <img src="<?= 'img/qr-prueba.png' ?>" alt="QR">
+                </div>
+                <p class="white-text sixInch footer-raspa"><?= $footer?></p>
             </div>
-            
         <?php } ?>
 
         <?php if($premio == "sin premio") {?>
@@ -83,9 +96,9 @@
             </div>
             <div class="content premio sin-premio-raspa"> 
                 <h2 class="yellow-text footlong">¡Intentalo de nuevo!</h2>
-                <p class="white-text footlong">La suerte te acompañará</p>
+                <p class="white-text footlong">La suerte te acompañará.</p>
                 <a href="index.php"><img id="imgVolver" src="img/Raspas/Botones/Volver.png" alt="Volver"></a>
-                <p class="white-text sixInch condiciones">Consultá condiciones completas de la promoción <span><a href="#" class="yellow-text no-underline">aquí</a></span></p>
+                <p class="white-text sixInch condiciones">Consultá condiciones completas de la promoción <span><a href="#" class="yellow-text no-underline">aquí.</a></span></p>
                 <div class="logos">
                     <img src="img/Raspas/S Subway.png" alt="S Subway">
                     <img src="img/Raspas/Coca Cola.png" alt="Coca Cola">
@@ -99,5 +112,6 @@
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/raspar.js"></script>
     </body>
 </html>
