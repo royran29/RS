@@ -306,6 +306,17 @@ div.premio div.logos img{
 div.premio div.logos img:nth-child(2){
     margin-left: 48%;
 }
+
+/*Raspa*/
+div.sin-premio-raspa > h2{
+    font-size: 1.8em;
+}
+div.sin-premio-raspa > p{
+    font-size: 1.2em;
+}
+div.sin-premio-raspa > p.condiciones{
+    font-size: .5em;
+}
 /* Medias Querys */
 @media only screen and (min-width:600px){
     div.container div.content {
