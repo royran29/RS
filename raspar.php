@@ -41,6 +41,7 @@
         $premio = "sub";
         $mensaje = "";
         $footer = "";
+        $qr = "qr-prueba";
         $visible = "hidden";
 
         if(isset($_GET['premio'])){
@@ -79,12 +80,12 @@
                 <h1 class="yellow-text footlong">¡Felicidades!</h1>
                 <div class="img-premio-raspa">
                     <canvas class="canvas" id="js-canvas" ></canvas>
-                    <img src="<?= 'img/premio.png' ?>" alt="Premio">
+                    <img src="<?= 'img/' . $premio .'.png' ?>" alt="Premio">
                     <p class="white-text sixInch mensaje-raspa"><?= $mensaje?></p>
                 </div>
                 
                 <div class="qr-premio-raspa">
-                    <img src="<?= 'img/qr-prueba.png' ?>" alt="QR">
+                    <img src="<?= 'img/'. $qr . '.png' ?>" alt="QR">
                 </div>
                 <p class="white-text sixInch footer-raspa"><?= $footer?></p>
             </div>

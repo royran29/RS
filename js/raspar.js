@@ -3,8 +3,13 @@
   'use strict';
   
   var isDrawing, lastPoint;
+
+  var canvas = document.getElementById('js-canvas');
+  canvas.width = document.getElementsByClassName('img-premio-raspa')[0].offsetWidth;
+  canvas.height = document.getElementsByClassName('img-premio-raspa')[0].offsetHeight;
+
   var container    = document.getElementById('js-container'),
-      canvas       = document.getElementById('js-canvas'),
+      //canvas       = document.getElementById('js-canvas'),
       canvasWidth  = canvas.width,
       canvasHeight = canvas.height,
       ctx          = canvas.getContext('2d'),
@@ -77,7 +82,7 @@
   function handlePercentage(filledInPixels) {
     filledInPixels = filledInPixels || 0;
     //console.log(filledInPixels + '%');
-    if (filledInPixels > 75) {
+    if (filledInPixels > 70) {
      //canvas.parentNode.removeChild(canvas);
      //document.querySelector('#js-canvas').style.display = 'none';
      $('#js-canvas').fadeOut();
@@ -103,7 +108,7 @@
       x = lastPoint.x + (Math.sin(angle) * i) - 25;
       y = lastPoint.y + (Math.cos(angle) * i) - 25;
       ctx.globalCompositeOperation = 'destination-out';
-      ctx.drawImage(brush, x, y, 50, 50);
+      ctx.drawImage(brush, x, y, 25, 25);
     }
     
     lastPoint = currentPoint;
